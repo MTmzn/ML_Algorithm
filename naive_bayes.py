@@ -57,7 +57,7 @@ def predict(data, Prob, labelCount):
             if (data[0][i], label) in Prob[i]:
                 probility *= Prob[i][(data[0][i], label)]
             else:
-                probility = 0
+                probility *= 0.5/labelCount[label]
         if (probility > bestAns):
             bestAns = probility
             labelPredict = label
